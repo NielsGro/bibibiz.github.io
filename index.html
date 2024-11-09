@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Archive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 50px; /* Пример размера логотипа */
+            height: 50px; /* Пример размера логотипа */
+            background-color: #ddd; /* Фоновый цвет для примера логотипа */
+            margin-right: 10px;
+        }
+        .download-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #8fbc8f; /* Зеленоватый цвет */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 20px;
+            color: #333;
+        }
+        .title {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <div>Site Name</div>
+    </header>
+    <div class="title">Archive Password:</div>
+    <button class="download-button" onclick="downloadFile()">DOWNLOAD NOW!</button>
+    <div class="status">UNDETECTED</div>
+
+    <script>
+        function downloadFile() {
+            var link = document.createElement('a');
+            link.href = 'https://example.com/your-archive.zip'; // Замените URL на фактический URL файла
+            link.setAttribute('download', 'your-archive.zip'); // Запрашивает скачивание файла под именем 'your-archive.zip'
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
